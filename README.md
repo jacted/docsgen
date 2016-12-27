@@ -5,6 +5,13 @@
 
 A CLI tool for creating documentation websites.
 
+## Installation
+
+1. Download [latest release](https://github.com/jacted/docsgen/releases)
+2. Put it in a folder and make sure its executeable
+3. Add the folder to system PATH
+4. You're set, you can now run it using `docsgen` in terminal
+
 ## Folder structure
 
 ```
