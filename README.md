@@ -12,6 +12,10 @@ A CLI tool for creating documentation websites.
 3. Add the folder to system PATH
 4. You're set, you can now run it using `docsgen` in terminal
 
+## Examples
+
+Take a look in the `examples` folder.
+
 ## Folder structure
 
 ```
