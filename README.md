@@ -9,15 +9,15 @@ A CLI tool for creating documentation websites.
 
 ```
  - api_docs (Input folder)
-   - Group name
-     - Section name 1
+   - 1_group_name
+     - 1_section_name
        - content.md
        - example.md
-     - Section name 2
+     - 2_section_name
        - content.md
        - example.md
-   - Group name 2
-     - Section name 3
+   - 2_group_name
+     - 1_section_name
        - content.md
        - example.md
 ```
