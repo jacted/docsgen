@@ -44,7 +44,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "docsgen"
 	app.Usage = "Generate docs file from markdown"
-	app.Version = "0.0.1"
+	app.Version = "0.0.2"
 
 	// CLI Flags
 	app.Flags = []cli.Flag{
