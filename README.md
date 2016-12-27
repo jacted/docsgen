@@ -41,6 +41,7 @@ A CLI tool for creating documentation websites.
 
 |`Flag`|Description|Options|
 |------------------|-----------|---------|
+|`name`|Docs name|"API Docs"|
 |`theme`|Theme name|"default"|
 |`out`|Output folder|
 |`in`|Input folder|
