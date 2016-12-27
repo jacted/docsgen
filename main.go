@@ -111,53 +111,57 @@ func main() {
 				groups := []Group{}
 				sections := []Section{}
 				for _, dir := range directories {
-					var urls []URL
-					outerPath := filepath.Join(inputFolder, dir.Name())
-					innerDirs, _ := ioutil.ReadDir(outerPath)
-					for _, innerDir := range innerDirs {
-						// Url
-						url := URL{
-							Title: createNameFromFile(innerDir.Name(), " "),
-							Href:  createNameFromFile(innerDir.Name(), "-"),
-						}
-						urls = append(urls, url)
+					if dir.IsDir() {
+						var urls []URL
+						outerPath := filepath.Join(inputFolder, dir.Name())
+						innerDirs, _ := ioutil.ReadDir(outerPath)
+						for _, innerDir := range innerDirs {
+							if innerDir.IsDir() {
+								// Url
+								url := URL{
+									Title: createNameFromFile(innerDir.Name(), " "),
+									Href:  createNameFromFile(innerDir.Name(), "-"),
+								}
+								urls = append(urls, url)
 
-						// Section
-						var content template.HTML
-						var example template.HTML
+								// Section
+								var content template.HTML
+								var example template.HTML
 
-						path := filepath.Join(outerPath, innerDir.Name())
-						files, _ := filepath.Glob(filepath.Join(path, "*.md"))
-						for _, f := range files {
-							b, err := ioutil.ReadFile(f)
-							if err != nil {
-								return errors.New("Could not read file")
+								path := filepath.Join(outerPath, innerDir.Name())
+								files, _ := filepath.Glob(filepath.Join(path, "*.md"))
+								for _, f := range files {
+									b, err := ioutil.ReadFile(f)
+									if err != nil {
+										return errors.New("Could not read file")
+									}
+
+									// Parse markdown
+									output := blackfriday.MarkdownCommon(b)
+
+									if strings.Index(f, "example") > -1 {
+										example = template.HTML(output)
+									} else {
+										content = template.HTML(output)
+									}
+								}
+
+								section := Section{
+									Title:   url.Title,
+									Link:    url.Href,
+									Content: content,
+									Example: example,
+								}
+								sections = append(sections, section)
 							}
-
-							// Parse markdown
-							output := blackfriday.MarkdownCommon(b)
-
-							if strings.Index(f, "example") > -1 {
-								example = template.HTML(output)
-							} else {
-								content = template.HTML(output)
+						}
+						if len(urls) != 0 {
+							var group = Group{
+								Title: createNameFromFile(dir.Name(), " "),
+								Urls:  urls,
 							}
+							groups = append(groups, group)
 						}
-
-						section := Section{
-							Title:   url.Title,
-							Link:    url.Href,
-							Content: content,
-							Example: example,
-						}
-						sections = append(sections, section)
-					}
-					if len(urls) != 0 {
-						var group = Group{
-							Title: createNameFromFile(dir.Name(), " "),
-							Urls:  urls,
-						}
-						groups = append(groups, group)
 					}
 				}
 
