@@ -56,6 +56,16 @@ Every time there is a change to the theme folder the following command needs to 
 
 [https://github.com/jteeuwen/go-bindata](https://github.com/jteeuwen/go-bindata)
 
+## Contributing
+
+1. Create an issue and describe your idea
+2. [Fork it](https://github.com/jacted/docsgen/fork)
+3. Create your feature branch (`git checkout -b my-new-feature`)
+4. Commit your changes (`git commit -am 'Add some feature'`)
+5. Publish the branch (`git push origin my-new-feature`)
+6. Create a new Pull Request
+7. Profit! :white_check_mark:
+
 ## Questions and issues
 
 Use the Github issue tracker for any questions, issues or feature suggestions.
