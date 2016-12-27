@@ -48,6 +48,26 @@ h4, h5 {
   background: #fafcfc;
   border-right: 1px solid #f0f4f7;
 }
+#sidebar #header {
+  box-sizing: border-box;
+  height: 49px;
+  border-bottom: 1px solid #f0f4f7;
+  line-height: 49px;
+  padding: 0px 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#sidebar #navigation {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 49px;
+  overflow: scroll;
+}
 #sidebar h5 {
   color: #939da3;
   padding: 0 20px 4px;

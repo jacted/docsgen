@@ -16,6 +16,7 @@ import (
 type (
 	// Content struct
 	Content struct {
+		Name     string
 		Groups   []Group
 		Sections []Section
 	}
@@ -48,6 +49,11 @@ func main() {
 	// CLI Flags
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
+			Name:  "name",
+			Value: "API Docs",
+			Usage: "API docs name",
+		},
+		cli.StringFlag{
 			Name:  "theme",
 			Value: "default",
 			Usage: "Theme name",
@@ -71,6 +77,7 @@ func main() {
 			Action: func(c *cli.Context) error {
 
 				// Get variables
+				name := c.GlobalString("name")
 				theme := c.GlobalString("theme")
 				outputFolder := c.GlobalString("out")
 				inputFolder := c.GlobalString("in")
@@ -156,6 +163,7 @@ func main() {
 
 				// Create docs file content
 				content := Content{
+					Name:     name,
 					Sections: sections,
 					Groups:   groups,
 				}

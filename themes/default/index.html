@@ -1,19 +1,24 @@
 <html>
   <head>
-    <title>DOCSGEN</title>
+    <title>{{ .Name }}</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
 
     <div id="sidebar">
-      {{ range $key, $value := .Groups }}
-        <h5>{{ $value.Title }}</h5>
-        <ul>
-          {{ range $k, $v := $value.Urls }}
-          <li><a href="#{{ $v.Href }}">{{ $v.Title }}</a></li>
-          {{ end }}
-        </ul>
-      {{ end }}
+      <div id="header">
+        {{ .Name }}
+      </div>
+      <div id="navigation">
+        {{ range $key, $value := .Groups }}
+          <h5>{{ $value.Title }}</h5>
+          <ul>
+            {{ range $k, $v := $value.Urls }}
+            <li><a href="#{{ $v.Href }}">{{ $v.Title }}</a></li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
     </div>
 
     <div id="background">
