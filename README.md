@@ -12,10 +12,6 @@ A CLI tool for creating documentation websites.
 3. Add the folder to system PATH
 4. You're set, you can now run it using `docsgen` in terminal
 
-## Examples
-
-Take a look in the `examples` folder.
-
 ## Folder structure
 
 ```
@@ -77,3 +73,7 @@ Use the Github issue tracker for any questions, issues or feature suggestions.
 ## License
 
 MIT licensed.
+
+## Examples
+
+![Default layout](https://raw.githubusercontent.com/jacted/docsgen/master/example/default_layout.png "Default layout")
