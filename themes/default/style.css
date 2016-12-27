@@ -1,0 +1,162 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: red;
+}
+
+body {
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #0099e5;
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+h4, h5 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+
+/* Sidebar
+*****************************************/
+#sidebar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: 75;
+  width: 280px;
+  background: #fafcfc;
+  border-right: 1px solid #f0f4f7;
+}
+#sidebar h5 {
+  color: #939da3;
+  padding: 0 20px 4px;
+}
+#sidebar h5:first-child {
+  padding-top: 20px;
+}
+#sidebar ul {
+  margin: 0;
+  padding: 0 0 26px;
+  line-height: 20px;
+  list-style: none;
+}
+#sidebar ul li a {
+  text-transform: capitalize;
+  display: block;
+  padding: 6px 20px;
+  color: #4c555a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Background
+*****************************************/
+#background {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 281px;
+  z-index: 1;
+}
+#background .dark {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  top: 0;
+  background: #2d3134;
+}
+
+/* Content
+*****************************************/
+#content {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 281px;
+  z-index: 2;
+  overflow-y: scroll;
+}
+#content h1 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  text-transform: capitalize;
+}
+
+#content section {
+  position: relative;
+  z-index: 2;
+  display: block;
+  overflow: hidden;
+}
+#content section .method-copy {
+  padding: 30px;
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  border-top: 1px solid #f0f4f7;
+}
+#content section .method-example {
+  padding: 30px;
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  color: #d0d4d7;
+  border-top: 1px solid #33383b;
+}
+
+#content section:first-child .method-copy,
+#content section:first-child .method-example {
+  border-top: 0px;
+}
+
+#content section .method-example pre {
+  padding: 20px 40px;
+  background: #272b2d;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+#content section .method-example pre,
+#content section .method-example code {
+  color: #d0d0d0;
+  direction: ltr;
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: break-word;
+  word-spacing: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+}

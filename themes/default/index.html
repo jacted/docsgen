@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>DOCSGEN</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div id="sidebar">
+      {{ range $key, $value := .Groups }}
+        <h5>{{ $value.Title }}</h5>
+        <ul>
+          {{ range $k, $v := $value.Urls }}
+          <li><a href="#{{ $v.Href }}">{{ $v.Title }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </div>
+
+    <div id="background">
+      <div class="dark"></div>
+    </div>
+
+    <div id="content">
+
+      {{ range $key, $value := .Sections }}
+        <section id="{{ $value.Link }}">
+          <div class="method-copy">
+            <h1>{{ $value.Title }}</h1>
+            {{ $value.Content }}
+          </div>
+          <div class="method-example">
+            {{ $value.Example }}
+          </div>
+        </section>
+      {{ end }}
+    </div>
+
+  </body>
+</html>
