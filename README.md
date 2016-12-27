@@ -40,9 +40,11 @@ A CLI tool for creating documentation websites.
 
 ## Bindata
 
-This project uses bindata to bundle the themes
+This project uses bindata to bundle the themes.
 
-go-bindata -o themes.go themes/...
+Every time there is a change to the theme folder the following command needs to be run:
+
+`go-bindata -o themes.go themes/...`
 
 [https://github.com/jteeuwen/go-bindata](https://github.com/jteeuwen/go-bindata)
 
